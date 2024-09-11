@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About Me</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+            padding-top: 80px; /* Space for fixed navbar */
+            color: #fff;
+        }
+
+        /* Navbar Styles */
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #03a9f4;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Main About Me Section */
+        .container {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            transition: transform 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skills h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            background-color: #03a9f4;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill:hover {
+            background-color: #0288d1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .skills-list {
+                flex-direction: column;
+            }
+
+            .skill {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                My Portfolio
+            </div>
+            <div class="menu">
+                <ul id="menu-list">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="cont.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <div class="container" id="about">
+        <img src="pexels-arnie-chou-304906-1229042.jpg" alt="Profile Picture" class="profile-picture">
+        <h1>About Me</h1>
+        <p>Hi, I'm [Your Name], a passionate web developer with a love for creating interactive and user-friendly websites. I specialize in front-end development, with experience in HTML, CSS, JavaScript, and React. My goal is to deliver beautiful and efficient web applications that enhance the user experience.</p>
+
+        <div class="skills" id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill">power point 75%</div>
+                <div class="skill">Browser 80%</div>
+                <div class="skill"></div>
+                <div class="skill">React</div>
+                <div class="skill">Node.js</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const menuList = document.getElementById('menu-list');
+
+        hamburger.addEventListener('click', () => {
+            if (menuList.style.display === 'flex') {
+                menuList.style.display = 'none';
+            } else {
+                menuList.style.display = 'flex';
+            }
+        });
+    </script>
+
+</body>
+</html>

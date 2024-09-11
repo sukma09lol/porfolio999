@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Skills</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+            padding-top: 80px; /* Space for fixed navbar */
+            color: #fff;
+        }
+
+        /* Navbar Styles */
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #03a9f4;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-item h3 {
+            font-size: 24px;
+            color: #03a9f4;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            font-size: 18px;
+            color: #e0e0e0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .skills h2 {
+                font-size: 28px;
+            }
+
+            .skill-item h3 {
+                font-size: 20px;
+            }
+
+            .skill-item p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                My Portfolio
+            </div>
+            <div class="menu">
+                <ul id="menu-list">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="cont.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+        </nav>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>HTML</h3>
+                <p>Proficient in creating structured and semantic HTML for web pages.</p>
+            </div>
+            <div class="skill-item">
+                <h3>CSS</h3>
+                <p>Experienced in creating responsive and visually appealing layouts using CSS and frameworks like Bootstrap.</p>
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <p>Skilled in developing interactive features and dynamic content using JavaScript.</p>
+            </div>
+            <div class="skill-item">
+                <h3>React</h3>
+                <p>Strong knowledge of building modern, single-page applications using React.js.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Node.js</h3>
+                <p>Experienced in building backend services and APIs using Node.js and Express.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Version Control (Git)</h3>
+                <p>Familiar with version control tools like Git for managing project codebases effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const menuList = document.getElementById('menu-list');
+
+        hamburger.addEventListener('click', () => {
+            if (menuList.style.display === 'flex') {
+                menuList.style.display = 'none';
+            } else {
+                menuList.style.display = 'flex';
+            }
+        });
+    </script>
+
+</body>
+</html>
